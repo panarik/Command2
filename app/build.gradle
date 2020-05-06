@@ -17,7 +17,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("keystorefile.keystore.jks")
+            storeFile file("keystorefile.jks")
             storePassword "APKapk7788"
             keyAlias "android"
             keyPassword "APKapk7788"
