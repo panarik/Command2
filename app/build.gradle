@@ -15,21 +15,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("keystorefile.keystore.jks")
+            storePassword "APKapk7788"
+            keyAlias "android"
+            keyPassword "APKapk7788"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        debug {
-            applicationIdSuffix ".debug"
-            debuggable true
-        }
-
-        staging {
-            initWith debug
-            manifestPlaceholders = [hostName:"internal.example.com"]
-            applicationIdSuffix ".debugStaging"
+            signingConfig signingConfigs.release
         }
 
     }
